@@ -1,0 +1,413 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+    <base href="../">
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Fav Icon  -->
+    <link rel="icon" href="/static/teslaicon.png">
+    <!-- Page Title  -->
+    <title>Tesla Coin - Referral</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="/static/zeal_nation/dash/dashlite.css">
+    <link id="skin-default" rel="stylesheet" href="/static/zeal_nation/dash/theme.css">
+</head>
+
+<body class="nk-body bg-lighter npc-default has-sidebar ">
+<div class="nk-app-root">
+    <!-- main @s  -->
+    <div class="nk-main ">
+        <!-- sidebar @s  -->
+        <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
+            <div class="nk-sidebar-element nk-sidebar-head">
+                <div class="nk-sidebar-brand">
+                    <a href="{% url 'home' %}">
+                                  <img style="height: 80px; width:100px;" src="/static/Mytes.png" title="" alt="Logo" />
+
+                                </a>
+                </div>
+                <div class="nk-menu-trigger mr-n2">
+                    <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="glyphicon glyphicon-home"></em></a>
+                    <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="glyphicon glyphicon-align-justify"></em></a>
+                </div>
+            </div><!-- .nk-sidebar-element -->
+            <div class="nk-sidebar-element">
+                <div class="nk-sidebar-content">
+                    <div class="nk-sidebar-menu" data-simplebar>
+                        <ul class="nk-menu">
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Member Account</h6>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
+                                <a href="{% url 'dashboard' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-home"></em></span>
+                                    <span class="nk-menu-text">Dashboard</span>
+                                </a>
+                            </li><!-- .nk-menu-item --><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
+                                <a href="{% url 'investmentPlans' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-usd"></em></span>
+                                    <span class="nk-menu-text">Package options</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{% url 'myreferals' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-user"></em></span>
+                                    <span class="nk-menu-text">Affiliate</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'notifications' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-bell"></em></span>
+                                    <span class="nk-menu-text">Important Notifications ( {{number_of_notifications}} )</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'video_page' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-volume-up"></em></span>
+                                    <span class="nk-menu-text">Confrence meeting</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Finance</h6>
+                            </li><!-- .nk-menu-item --><!-- .nk-menu-item --><!-- .nk-menu-item --><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
+                                <a href="{% url 'loan' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-usd"></em></span>
+                                    <span class="nk-menu-text">Request Crypto Loan</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{% url 'reinvest' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-repeat"></em></span>
+                                    <span class="nk-menu-text">Reinvest</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item">
+                                <a href="{% url 'withdrawal' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-credit-card"></em></span>
+                                    <span class="nk-menu-text">Withdrawal</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'history' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-book"></em></span>
+                                    <span class="nk-menu-text">History</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'transfer_funds' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-transfer"></em></span>
+                                    <span class="nk-menu-text">Transfer Funds</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Settings</h6>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'account_settings' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-wrench"></em></span>
+                                    <span class="nk-menu-text">KYC Verification</span>
+                                </a>
+                            </li>
+                            <li class="nk-menu-item has-sub">
+                                <a href="{% url 'logout' %}" class="nk-menu-link">
+                                    <span class="nk-menu-icon"><em class="glyphicon glyphicon-off"></em></span>
+                                    <span class="nk-menu-text">Logout</span>
+                                </a>
+                            </li><!-- .nk-menu-item -->
+                        </ul><!-- .nk-menu -->
+                    </div><!-- .nk-sidebar-menu -->
+                </div><!-- .nk-sidebar-content -->
+            </div><!-- .nk-sidebar-element -->
+        </div>
+        <!-- sidebar @e  -->
+        <!-- wrap @s  -->
+        <div class="nk-wrap ">
+            <!-- main header @s  -->
+            <div class="nk-header nk-header-fixed is-light">
+                <div class="container-fluid">
+                    <div class="nk-header-wrap">
+                        <div class="nk-menu-trigger d-xl-none ml-n1">
+                            <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em class="glyphicon glyphicon-align-justify"></em></a>
+                        </div>
+                        <div class="nk-header-brand d-xl-none">
+                            <a href="{% url 'home' %}">
+                                  <img style="height: 80px; width:100px;" src="/static/Mytes.png" title="" alt="Logo" />
+
+                                </a>
+                        </div><!-- .nk-header-brand -->
+                        <div class="nk-header-tools">
+                            <ul class="nk-quick-nav">
+                                <li class="dropdown user-dropdown">
+                                    <a href="#" class="dropdown-toggle mr-n1" data-toggle="dropdown">
+                                        <div class="user-toggle">
+                                            <div class="user-avatar sm">
+                                                <em class="glyphicon glyphicon-user"></em>
+                                            </div>
+                                            <div class="user-info d-none d-xl-block">
+                                                                                                <div class="user-name dropdown-indicator">{{request.user.username}}</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                                        <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                            <div class="user-card">
+                                                <div class="user-avatar">
+                                                    <span><em class="glyphicon glyphicon-user"></em></span>
+                                                </div>
+                                                <div class="user-info">
+                                                    <span class="lead-text">{{request.user.username}}</span>
+                                                    <span class="sub-text">{{request.user.email}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+                                                <li><a href="{% url 'account_settings' %}"><em class="glyphicon glyphicon-user"></em><span>View Profile</span></a></li>
+                                                <li><a href="{% url 'withdrawal' %}"><em class="glyphicon glyphicon-credit-card"></em><span>Withdraw</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="dropdown-inner">
+                                            <ul class="link-list">
+                                                <li><a href="{% url 'logout' %}"><em class="glyphicon glyphicon-off"></em><span>Sign out</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- .nk-header-wrap -->
+                </div><!-- .container-fliud -->
+            </div>
+            <!-- main header @e  -->
+            <!-- content @s  -->
+                <div class="nk-content ">
+
+
+<div class="row">
+
+    <div class="col-md-6">
+
+        <h6 style="text-align: center;">Pending Deposits</h6>
+
+        <hr>
+
+        <div class="card card-body">
+
+            <a class="btn btn-warning btn-sm btn-block" href="{% url 'pending_deposit' %}">More Pending deposits</a>
+
+            <table class="table table-sm">
+
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+
+                </tr>
+                 {% for i in last_five_payment_id %}
+                <tr>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'pending_deposit' %}">View all</a></td>
+                    <td>{{i.payment_id}}</td>
+                    <td>{{i.price_amount|floatformat:"2"}}</td>
+                    <td>{{i.date_created|date:"d M, Y"}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6">
+
+        <h6 style="text-align: center;">Pending Withdrawals</h6>
+
+        <hr>
+
+        <div class="card card-body">
+
+            <a class="btn btn-danger btn-sm btn-block" href="{% url 'pending_withdrawal' %}">More Pending withdrawals</a>
+
+            <table class="table table-sm">
+
+                <tr>
+
+                    <th></th>
+                    <th>Payout currency</th>
+                    <th>amount</th>
+                    <th>date requested</th>
+
+                </tr>
+                 {% for i in last_five_withdrawal %}
+                <tr>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'pending_withdrawal' %}">View all</a></td>
+                    <td>{{i.crypto_used_for_requesting_withdrawal}}</td>
+                    <td>{{i.amount|floatformat:"2"}}</td>
+                    <td>{{i.date_created|date:"d M, Y"}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+<br>
+
+<div class="container">
+    <br>
+    <div class="row">
+
+    <div class="col-md-6">
+
+        <h6 style="text-align: center;">Pending Bonus</h6>
+
+        <hr>
+
+        <div class="card card-body">
+
+            <a class="btn btn-success btn-sm btn-block" href="{% url 'pending_bonus' %}">More Pending bonus</a>
+
+            <table class="table table-sm">
+
+                <tr>
+
+                    <th></th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+
+                </tr>
+                 {% for i in last_five_bonus %}
+                <tr>
+                    <td><a class="btn btn-sm btn-info" href="{% url 'pending_bonus' %}">View all</a></td>
+                    <td>{{i.transaction_type}}</td>
+                    <td>{{i.amount|floatformat:"2"}}</td>
+                    <td>{{i.created|date:"d M, Y"}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6">
+
+        <h6 style="text-align: center;">Completed Transactions</h6>
+
+        <hr>
+
+        <div class="card card-body">
+
+            <a class="btn btn-success btn-sm btn-block" href="{% url 'completed_transaction' %}">More Completed Transactions</a>
+
+            <table class="table table-sm">
+
+                <tr>
+
+                    <th></th>
+                    <th>Transaction Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+
+                </tr>
+                 {% for i in last_five_transaction %}
+                <tr>
+                    <td><a class="btn btn-sm btn-primary" href="{% url 'completed_transaction' %}">View all</a></td>
+                    <td>{{i.transaction_type}}</td>
+                    <td>USD {{i.amount|floatformat:"2"}}</td>
+                    <td>{{i.created|date:"d M, Y"}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                    </div>
+                                </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ;(function($) {
+            'use strict'
+            $(function() {
+                $('#example1').DataTable({
+                    responsive: true,
+                })
+
+                $('#example2').DataTable({
+                    autoWidth: true,
+                    scrollX: true,
+                    fixedColumns: true,
+                })
+
+                $('#example3').DataTable({
+                    autoWidth: true,
+                    scrollX: true,
+                    fixedColumns: true,
+                })
+            })
+        })(jQuery)
+    </script>
+            <!-- content @e  -->
+        </div>
+        <!-- wrap @e  -->
+    </div>
+    <!-- main @e  -->
+</div>
+<!-- app-root @e  -->
+<!-- JavaScript -->
+<script src="/static/zeal_nation/dash/bundle.js"></script>
+<script src="/static/zeal_nation/dash/scripts.js"></script>
+<script src="/static/zeal_nation/dash/chart-ecommerce.js"></script>
+</body>
+
+</html>
